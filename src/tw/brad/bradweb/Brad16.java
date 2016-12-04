@@ -44,12 +44,15 @@ public class Brad16 extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		String type = request.getParameter("type");
+		String delid = request.getParameter("delid");
 		if (type!=null && type.equals("add")){
 			// insert into
 			String account = request.getParameter("account"); 
 			String passwd = request.getParameter("passwd"); 
 			String realname = request.getParameter("realname"); 
 			addData(account,passwd,realname);
+		}else if(delid!= null){
+			delData(delid);
 		}
 		
 		outHTML(queryData());
@@ -67,6 +70,18 @@ public class Brad16 extends HttpServlet {
 			pstmt.setString(1, account);
 			pstmt.setString(2, passwd);
 			pstmt.setString(3, realname);
+			pstmt.execute();
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		}
+	}
+	
+	private void delData(String id){
+		try {
+			PreparedStatement pstmt = 
+					conn.prepareStatement(
+							"delete from member where id = ?");
+			pstmt.setString(1, id);
 			pstmt.execute();
 		} catch (SQLException e) {
 			System.out.println(e.toString());
@@ -104,6 +119,7 @@ public class Brad16 extends HttpServlet {
 		out.print("<th>Account</th>");
 		out.print("<th>Password</th>");
 		out.print("<th>RealName</th>");
+		out.print("<th>Delete</th>");
 		out.print("</tr>");
 		
 		for (HashMap<String,String> row : data){
@@ -111,6 +127,9 @@ public class Brad16 extends HttpServlet {
 			for (String field : fields){
 				out.print(String.format("<td>%s</td>",row.get(field)));
 			}
+			out.print(String.format(
+					"<td><a href=?delid=%s>Delete</a></td>",
+					row.get(fields[0])));
 			out.print("</tr>");
 		}
 		out.print("</table>");
