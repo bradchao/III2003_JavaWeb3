@@ -43,10 +43,34 @@ public class Brad16 extends HttpServlet {
 		out = response.getWriter();
 		request.setCharacterEncoding("utf-8");
 		
+		String type = request.getParameter("type");
+		if (type!=null && type.equals("add")){
+			// insert into
+			String account = request.getParameter("account"); 
+			String passwd = request.getParameter("passwd"); 
+			String realname = request.getParameter("realname"); 
+			addData(account,passwd,realname);
+		}
+		
 		outHTML(queryData());
 		
 		
 		
+	}
+	
+	private void addData(String account,String passwd,String realname){
+		try {
+			PreparedStatement pstmt = 
+					conn.prepareStatement(
+							"insert into member (account,passwd,realname) " +
+							"values (?,?,?)");
+			pstmt.setString(1, account);
+			pstmt.setString(2, passwd);
+			pstmt.setString(3, realname);
+			pstmt.execute();
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		}
 	}
 	
 	private ArrayList<HashMap<String,String>> queryData(){
