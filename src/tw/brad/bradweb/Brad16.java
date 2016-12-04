@@ -41,7 +41,7 @@ public class Brad16 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		String type = request.getParameter("type");
 		String delid = request.getParameter("delid");
@@ -120,6 +120,7 @@ public class Brad16 extends HttpServlet {
 		out.print("<th>Password</th>");
 		out.print("<th>RealName</th>");
 		out.print("<th>Delete</th>");
+		out.print("<th>Edit</th>");
 		out.print("</tr>");
 		
 		for (HashMap<String,String> row : data){
@@ -130,6 +131,7 @@ public class Brad16 extends HttpServlet {
 			out.print(String.format(
 					"<td><a href=?delid=%s onclick='return isDelete(\"%s\");'>Delete</a></td>",
 					row.get(fields[0]), row.get(fields[1])));
+			out.println(String.format("<td><a href='Brad17?editid=%s'>Edit</a></td>", row.get(fields[0])));
 			out.print("</tr>");
 		}
 		out.print("</table>");

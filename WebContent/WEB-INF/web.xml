@@ -40,6 +40,14 @@
     <servlet-name>Brad16</servlet-name>
     <url-pattern>/Brad16</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad17</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad17</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad17</servlet-name>
+    <url-pattern>/Brad17</url-pattern>
+  </servlet-mapping>
   <context-param>
     <description>My Tepmplate</description>
     <param-name>template-path</param-name>
