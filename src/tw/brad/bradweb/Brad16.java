@@ -110,7 +110,7 @@ public class Brad16 extends HttpServlet {
 	}
 	
 	private void outHTML(ArrayList<HashMap<String,String>> data){
-		
+		out.println("<script>function isDelete(name){return confirm('Delete ' + name + ' ?');}</script>");
 		out.println("<h1>Brad Big Company</h1><hr>");
 		out.println("<a href='brad17.html'>AddNew</a>");
 		out.print("<table border='1' width='100%'>");
@@ -128,8 +128,8 @@ public class Brad16 extends HttpServlet {
 				out.print(String.format("<td>%s</td>",row.get(field)));
 			}
 			out.print(String.format(
-					"<td><a href=?delid=%s>Delete</a></td>",
-					row.get(fields[0])));
+					"<td><a href=?delid=%s onclick='return isDelete(\"%s\");'>Delete</a></td>",
+					row.get(fields[0]), row.get(fields[1])));
 			out.print("</tr>");
 		}
 		out.print("</table>");
