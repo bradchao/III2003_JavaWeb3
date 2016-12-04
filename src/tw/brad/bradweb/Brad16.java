@@ -53,6 +53,12 @@ public class Brad16 extends HttpServlet {
 			addData(account,passwd,realname);
 		}else if(delid!= null){
 			delData(delid);
+		}else if(type!=null && type.equals("edit")){
+			String updateid = request.getParameter("updateid"); 
+			String account = request.getParameter("account"); 
+			String passwd = request.getParameter("passwd"); 
+			String realname = request.getParameter("realname"); 
+			editData(updateid,account,passwd,realname);
 		}
 		
 		outHTML(queryData());
@@ -82,6 +88,20 @@ public class Brad16 extends HttpServlet {
 					conn.prepareStatement(
 							"delete from member where id = ?");
 			pstmt.setString(1, id);
+			pstmt.execute();
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		}
+	}
+	private void editData(String updateid, String account,String passwd,String realname){
+		try {
+			PreparedStatement pstmt = 
+					conn.prepareStatement(
+							"update member set account=?,passwd=?,realname=? where id = ?");
+			pstmt.setString(1, account);
+			pstmt.setString(2, passwd);
+			pstmt.setString(3, realname);
+			pstmt.setString(4, updateid);
 			pstmt.execute();
 		} catch (SQLException e) {
 			System.out.println(e.toString());
