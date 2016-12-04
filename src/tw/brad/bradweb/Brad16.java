@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Brad16 extends HttpServlet {
 	private PrintWriter out;
 	private Connection conn = null;
+	private String[] fields = {"id","account","passwd","realname"};
 	
 	@Override
 	public void init() throws ServletException {
@@ -57,10 +58,9 @@ public class Brad16 extends HttpServlet {
 			
 			while (rs.next()){
 				HashMap<String,String> row = new HashMap<>();
-				row.put("id", rs.getString("id"));
-				row.put("account", rs.getString("account"));
-				row.put("passwd", rs.getString("passwd"));
-				row.put("realname", rs.getString("realname"));
+				for (String field : fields){
+					row.put(field, rs.getString(field));
+				}
 				data.add(row);
 			}
 			
@@ -73,6 +73,7 @@ public class Brad16 extends HttpServlet {
 	private void outHTML(ArrayList<HashMap<String,String>> data){
 		
 		out.println("<h1>Brad Big Company</h1><hr>");
+		out.println("<a href='brad17.html'>AddNew</a>");
 		out.print("<table border='1' width='100%'>");
 		out.print("<tr>");
 		out.print("<th>Id.</th>");
@@ -83,10 +84,9 @@ public class Brad16 extends HttpServlet {
 		
 		for (HashMap<String,String> row : data){
 			out.print("<tr>");
-			out.print(String.format("<td>%s</td>",row.get("id")));
-			out.print(String.format("<td>%s</td>",row.get("account")));
-			out.print(String.format("<td>%s</td>",row.get("passwd")));
-			out.print(String.format("<td>%s</td>",row.get("realname")));
+			for (String field : fields){
+				out.print(String.format("<td>%s</td>",row.get(field)));
+			}
 			out.print("</tr>");
 		}
 		out.print("</table>");
