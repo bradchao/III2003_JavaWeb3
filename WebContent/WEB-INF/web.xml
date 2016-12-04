@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" metadata-complete="true" version="3.1">
+  <servlet>
+    <servlet-name>Brad12</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad12</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad12</servlet-name>
+    <url-pattern>/Brad12</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad13</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad13</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad13</servlet-name>
+    <url-pattern>/Brad13</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad14</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad14</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad14</servlet-name>
+    <url-pattern>/Brad14</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad15</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad15</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad15</servlet-name>
+    <url-pattern>/Brad15</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad16</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad16</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad16</servlet-name>
+    <url-pattern>/Brad16</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <description>My Tepmplate</description>
+    <param-name>template-path</param-name>
+    <param-value>D:\Source\Brad\WebContent\tempates</param-value>
+  </context-param>
+</web-app>
