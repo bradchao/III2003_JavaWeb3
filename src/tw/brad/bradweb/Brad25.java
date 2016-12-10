@@ -12,7 +12,8 @@ public class Brad25 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("http://www.iii.org.tw");
+		//response.sendRedirect("http://www.iii.org.tw");
+		response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "Hello, OK");
 	}
 
 }
