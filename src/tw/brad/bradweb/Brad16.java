@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
@@ -33,6 +34,10 @@ public class Brad16 extends HttpServlet {
 			prop.setProperty("password", "root");
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://127.0.0.1/iii", prop);
+			//Statement stmt = conn.createStatement();
+			//stmt.execute("SET NAME UTF8");
+			
+			
 		}catch(Exception e){
 		}
 	}
