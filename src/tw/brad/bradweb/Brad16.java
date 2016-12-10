@@ -34,8 +34,8 @@ public class Brad16 extends HttpServlet {
 			prop.setProperty("password", "root");
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://127.0.0.1/iii", prop);
-			//Statement stmt = conn.createStatement();
-			//stmt.execute("SET NAME UTF8");
+			Statement stmt = conn.createStatement();
+			stmt.execute("SET NAME UTF8");
 			
 			
 		}catch(Exception e){
