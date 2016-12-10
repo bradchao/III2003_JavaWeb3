@@ -20,7 +20,9 @@ public class Brad21 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("image/jpeg");
 		
-		float rate = 74.321f;
+		String strRate = request.getParameter("rate");
+		
+		float rate = Float.parseFloat(strRate);
 		
 		// Canvas => 400 x 20
 		BufferedImage bimg = 
