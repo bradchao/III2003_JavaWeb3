@@ -1,5 +1,8 @@
 package tw.brad.bradweb;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +26,13 @@ public class Brad24 extends HttpServlet {
 		File imgBg = new File(imgPath, "bg.jpg");
 		// Canvas => bg.jpg
 		BufferedImage bimg = ImageIO.read(imgBg);
+		Graphics2D g2d = bimg.createGraphics();
+		
+		// drawing...
+		Font font = new Font(null, Font.BOLD+Font.ITALIC, 36);
+		g2d.setFont(font);
+		g2d.setColor(Color.BLACK);
+		g2d.drawString("Hello, World", 100, 100);
 		
 		// Output
 		OutputStream out = response.getOutputStream();
