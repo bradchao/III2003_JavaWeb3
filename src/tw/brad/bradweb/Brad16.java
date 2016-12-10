@@ -44,6 +44,16 @@ public class Brad16 extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGetAndPost(request, response);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGetAndPost(request, response);
+	}
+	
+	private void doGetAndPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
@@ -53,7 +63,7 @@ public class Brad16 extends HttpServlet {
 		if (type!=null && type.equals("add")){
 			// insert into
 			String account = request.getParameter("account"); 
-			String passwd = request.getParameter("passwd"); 
+			String passwd = BradUtils.hashPassword(request.getParameter("passwd")); 
 			String realname = request.getParameter("realname"); 
 			addData(account,passwd,realname);
 		}else if(delid!= null){
@@ -68,9 +78,9 @@ public class Brad16 extends HttpServlet {
 		
 		outHTML(queryData());
 		
-		
-		
 	}
+	
+	
 	
 	private void addData(String account,String passwd,String realname){
 		try {
