@@ -85,4 +85,9 @@
     <param-name>template-path</param-name>
     <param-value>D:\Source\Brad\WebContent\tempates</param-value>
   </context-param>
+  <context-param>
+    <description>Image Folder</description>
+    <param-name>imgs-path</param-name>
+    <param-value>D:\Source\Brad\WebContent\imgs</param-value>
+  </context-param>
 </web-app>
