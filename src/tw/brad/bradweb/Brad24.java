@@ -3,6 +3,7 @@ package tw.brad.bradweb;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +31,12 @@ public class Brad24 extends HttpServlet {
 		
 		// drawing...
 		Font font = new Font(null, Font.BOLD+Font.ITALIC, 36);
-		g2d.setFont(font);
+		
+		AffineTransform tran = new AffineTransform();
+		tran.rotate(Math.toRadians(-30));
+		Font newfont = font.deriveFont(tran);
+		
+		g2d.setFont(newfont);
 		g2d.setColor(Color.BLACK);
 		g2d.drawString("Hello, World", 100, 100);
 		
