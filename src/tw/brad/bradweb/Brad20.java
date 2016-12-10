@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
+
 @WebServlet("/Brad19")
 public class Brad20 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -50,7 +52,8 @@ public class Brad20 extends HttpServlet {
 		String jsonString = getJSONString(
 				"http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
 		if (jsonString != null){
-			out.println(jsonString);
+			//out.println(jsonString);
+			parseJSON(jsonString);
 		}
 	}
 	
@@ -70,6 +73,11 @@ public class Brad20 extends HttpServlet {
 			reader.close();
 		}catch(Exception ee){}
 		return ret;
+	}
+	
+	private void parseJSON(String json){
+		JSONArray root = new JSONArray(json);
+		System.out.println(root.length());
 	}
 	
 
