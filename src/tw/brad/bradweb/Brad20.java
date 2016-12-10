@@ -1,13 +1,13 @@
 package tw.brad.bradweb;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -45,10 +45,13 @@ public class Brad20 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		
 		String jsonString = getJSONString(
 				"http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
-
+		if (jsonString != null){
+			out.println(jsonString);
+		}
 	}
 	
 	private String getJSONString(String url){
@@ -59,9 +62,12 @@ public class Brad20 extends HttpServlet {
 					(HttpURLConnection)jsonURL.openConnection();
 			conn.connect();
 			
-			//conn.getInputStream();
-			
-			
+			BufferedReader reader = 
+					new BufferedReader(new InputStreamReader(
+							conn.getInputStream()));
+			ret = reader.readLine();
+			System.out.println(ret);
+			reader.close();
 		}catch(Exception ee){}
 		return ret;
 	}
