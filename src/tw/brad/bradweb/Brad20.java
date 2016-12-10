@@ -8,6 +8,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 @WebServlet("/Brad19")
 public class Brad20 extends HttpServlet {
@@ -76,8 +79,45 @@ public class Brad20 extends HttpServlet {
 	}
 	
 	private void parseJSON(String json){
-		JSONArray root = new JSONArray(json);
-		System.out.println(root.length());
+		try{
+			PreparedStatement pstmt = 
+					conn.prepareStatement(
+							"insert into food (name,addr,tel) " +
+							"values (?,?,?)");
+		
+			JSONArray root = new JSONArray(json);
+			for (int i=0; i<root.length(); i++){
+				JSONObject row =  root.getJSONObject(i);
+				String name = row.getString("Name");
+				String addr = row.getString("Address");
+				String tel = row.getString("Tel");
+				out.print(name + ":" + tel + "<br>");
+				
+				pstmt.setString(1, name);
+				pstmt.setString(2, addr);
+				pstmt.setString(3, tel);
+				pstmt.execute();
+				
+			}
+		}catch(Exception ee){
+			
+		}
+	}
+	
+	
+	private void addData(String account,String passwd,String realname){
+		try {
+			PreparedStatement pstmt = 
+					conn.prepareStatement(
+							"insert into member (account,passwd,realname) " +
+							"values (?,?,?)");
+			pstmt.setString(1, account);
+			pstmt.setString(2, passwd);
+			pstmt.setString(3, realname);
+			pstmt.execute();
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		}
 	}
 	
 
