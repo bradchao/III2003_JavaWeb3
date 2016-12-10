@@ -3,6 +3,7 @@ package tw.brad.bradweb;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -23,7 +24,10 @@ public class Brad24 extends HttpServlet {
 		// Canvas => bg.jpg
 		BufferedImage bimg = ImageIO.read(imgBg);
 		
-		
+		// Output
+		OutputStream out = response.getOutputStream();
+		ImageIO.write(bimg, "jpeg", out);
+		out.close();
 
 	}
 

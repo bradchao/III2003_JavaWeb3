@@ -80,6 +80,14 @@
     <servlet-name>Brad21</servlet-name>
     <url-pattern>/Brad21</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad24</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad24</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad24</servlet-name>
+    <url-pattern>/Brad24</url-pattern>
+  </servlet-mapping>
   <context-param>
     <description>My Tepmplate</description>
     <param-name>template-path</param-name>
