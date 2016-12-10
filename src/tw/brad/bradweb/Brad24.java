@@ -33,12 +33,16 @@ public class Brad24 extends HttpServlet {
 		Font font = new Font(null, Font.BOLD+Font.ITALIC, 36);
 		
 		AffineTransform tran = new AffineTransform();
-		tran.rotate(Math.toRadians(-30));
+		tran.rotate(Math.toRadians(-30), 100, 0);
 		Font newfont = font.deriveFont(tran);
 		
 		g2d.setFont(newfont);
 		g2d.setColor(Color.BLACK);
-		g2d.drawString("Hello, World", 100, 100);
+		g2d.drawString("Hello, World1", 100, 200);
+
+		g2d.setFont(font);
+		g2d.setColor(Color.RED);
+		g2d.drawString("Hello, World2", 100, 200);
 		
 		// Output
 		OutputStream out = response.getOutputStream();
