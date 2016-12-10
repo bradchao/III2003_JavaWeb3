@@ -45,7 +45,7 @@ public class Brad20 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+		//response.setCharacterEncoding("UTF-8");
 		
 		String jsonString = getJSONString(
 				"http://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
@@ -64,9 +64,9 @@ public class Brad20 extends HttpServlet {
 			
 			BufferedReader reader = 
 					new BufferedReader(new InputStreamReader(
-							conn.getInputStream()));
+							conn.getInputStream(), "UTF-8"));
 			ret = reader.readLine();
-			System.out.println(ret);
+			//System.out.println(ret);
 			reader.close();
 		}catch(Exception ee){}
 		return ret;
