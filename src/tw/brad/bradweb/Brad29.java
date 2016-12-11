@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,12 @@ public class Brad29 extends HttpServlet {
 				// Login OK
 				if (auto != null && auto.equals("true")){
 					// addCookie
+					Cookie accoutCookie = new Cookie("account", account);
+					accoutCookie.setMaxAge(7*24*60*60);
+					Cookie passwdCookie = new Cookie("account", account);
+					passwdCookie.setMaxAge(7*24*60*60);
+					response.addCookie(accoutCookie);
+					response.addCookie(passwdCookie);
 				}
 				// forward
 			}
