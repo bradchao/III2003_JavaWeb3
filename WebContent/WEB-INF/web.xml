@@ -104,6 +104,22 @@
     <servlet-name>Brad26</servlet-name>
     <url-pattern>/Brad26</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad27</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad27</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad27</servlet-name>
+    <url-pattern>/Brad27</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad29</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad29</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad29</servlet-name>
+    <url-pattern>/Brad29</url-pattern>
+  </servlet-mapping>
   <context-param>
     <description>My Tepmplate</description>
     <param-name>template-path</param-name>
