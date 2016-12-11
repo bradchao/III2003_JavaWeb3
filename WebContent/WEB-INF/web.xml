@@ -136,6 +136,39 @@
     <servlet-name>Brad31</servlet-name>
     <url-pattern>/Brad31</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad32</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad32</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad32</servlet-name>
+    <url-pattern>/Brad32</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad33</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad33</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad33</servlet-name>
+    <url-pattern>/Brad33</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad34</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad34</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad34</servlet-name>
+    <url-pattern>/Brad34</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad35</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad35</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad35</servlet-name>
+    <url-pattern>/Brad35</url-pattern>
+  </servlet-mapping>
+  
   <context-param>
     <description>My Tepmplate</description>
     <param-name>template-path</param-name>
