@@ -26,6 +26,7 @@ public class Brad32 extends HttpServlet {
 		out.print("Lottery:" + Lottery + "<br>");
 		
 		HttpSession session = request.getSession();
+		session.setMaxInactiveInterval(10);
 		session.setAttribute("name", "brad");
 		session.setAttribute("lottery", Lottery); // Lottery(int)=>autoboxing=>Integer
 		myCart = new MyCart("brad");
