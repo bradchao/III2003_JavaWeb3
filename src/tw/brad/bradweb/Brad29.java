@@ -21,6 +21,31 @@ public class Brad29 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 		
+		// Check Cookie First
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null){
+			HashMap<String,String> mapCookies = new HashMap<>();
+			for (Cookie cookie: cookies){
+				String name = cookie.getName();
+				String value = cookie.getValue();
+				mapCookies.put(name, value);
+			}
+			if (mapCookies.containsKey("account") &&
+					mapCookies.containsKey("passwd")){
+				String account = mapCookies.get("account");
+				String passwd = mapCookies.get("passwd");
+				if (account.equals("iii") && passwd.equals("123")){
+					// forward
+					request.getRequestDispatcher("Brad30")
+					.forward(request, response);
+					return ;
+				}
+			}
+			
+		}
+
+		
+		
 		String account = request.getParameter("account");
 		String passwd = request.getParameter("passwd");
 		if (account != null){
@@ -32,12 +57,14 @@ public class Brad29 extends HttpServlet {
 					// addCookie
 					Cookie accoutCookie = new Cookie("account", account);
 					accoutCookie.setMaxAge(7*24*60*60);
-					Cookie passwdCookie = new Cookie("account", account);
+					Cookie passwdCookie = new Cookie("passwd", passwd);
 					passwdCookie.setMaxAge(7*24*60*60);
 					response.addCookie(accoutCookie);
 					response.addCookie(passwdCookie);
 				}
 				// forward
+				request.getRequestDispatcher("Brad30")
+				.forward(request, response);
 			}
 		}
 		
