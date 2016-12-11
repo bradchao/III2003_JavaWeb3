@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Brad33")
 public class Brad33 extends HttpServlet {
@@ -18,7 +19,20 @@ public class Brad33 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 
-		out.println("Brad33");
+		HttpSession session = request.getSession();
+		String name = (String)session.getAttribute("name");
+		Integer Lottery = (Integer)session.getAttribute("lottery");
+		if (name == null){
+			response.sendRedirect("Brad32");
+			return;
+		}
+		
+		out.println("Brad33<hr>");
+		out.print(name + ":" + Lottery);
+		
+		
+		
+		
 	
 	}
 
