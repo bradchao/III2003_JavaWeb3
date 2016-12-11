@@ -14,7 +14,11 @@
 					out.print("<tr>");
 					for (int j = 2; j <= 5; j++) {
 						int newj = j + k * 4;
-						out.print("<td>");
+						if ((j+k)%2==0){
+							out.print("<td bgcolor='pink'>");
+						}else{
+							out.print("<td bgcolor='yellow'>");
+						}
 						for (int i = 1; i <= 9; i++) {
 							int r = newj * i;
 							out.print(newj + " x " + i + " = " + r + "<br />");
