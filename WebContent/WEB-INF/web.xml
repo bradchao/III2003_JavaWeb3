@@ -120,6 +120,14 @@
     <servlet-name>Brad29</servlet-name>
     <url-pattern>/Brad29</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Brad30</servlet-name>
+    <servlet-class>tw.brad.bradweb.Brad30</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Brad30</servlet-name>
+    <url-pattern>/Brad30</url-pattern>
+  </servlet-mapping>
   <context-param>
     <description>My Tepmplate</description>
     <param-name>template-path</param-name>

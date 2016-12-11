@@ -20,9 +20,22 @@ public class Brad29 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 		
+		String account = request.getParameter("account");
+		String passwd = request.getParameter("passwd");
+		if (account != null){
+			String auto = request.getParameter("auto");
+			// check account / passowrd
+			if (account.equals("iii") && passwd.equals("123")){
+				// Login OK
+				if (auto != null && auto.equals("true")){
+					// addCookie
+				}
+				// forward
+			}
+		}
+		
 		
 		outHTML();
-		
 	}
 
 	private void outHTML(){
