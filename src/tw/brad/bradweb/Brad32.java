@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 public class Brad32 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PrintWriter out;
+	private MyCart myCart;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
@@ -27,6 +28,10 @@ public class Brad32 extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("name", "brad");
 		session.setAttribute("lottery", Lottery); // Lottery(int)=>autoboxing=>Integer
+		myCart = new MyCart("brad");
+		session.setAttribute("cart", myCart);
+		
+		
 		
 		out.print("<a href='Brad33'>Goto Brad33</a>");
 	

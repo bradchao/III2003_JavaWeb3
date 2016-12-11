@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Brad35")
 public class Brad35 extends HttpServlet {
@@ -18,6 +19,9 @@ public class Brad35 extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		out = response.getWriter();
 
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
 		out.println("Brad35");
 	
 	}
