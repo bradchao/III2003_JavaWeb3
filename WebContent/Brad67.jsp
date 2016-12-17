@@ -1,3 +1,4 @@
+<%@page import="java.util.LinkedList"%>
 <%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -26,6 +27,18 @@ Name3 : ${urname[2] }<br>
 User: ${data["my name"] }<br>
 Password: ${data["passwd.1"] }<br>
 Gender: ${data["gender"] }<br>
+<hr>
+<%
+	LinkedList<String> list = new LinkedList<>();
+	list.add("AAAA");
+	list.add("BBHB");
+	list.add("CCCC");
+	request.setAttribute("list", list);
+
+%>
+List1: ${list[param.i]}
+
+
 
 </body>
 </html>
