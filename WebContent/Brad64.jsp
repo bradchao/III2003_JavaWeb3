@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="member" class="tw.brad.j2ee.Member" />
-<jsp:setProperty name="member" property="id" value="002" />
-<jsp:setProperty name="member" property="name" value="${param.name }" />
-
+<%
+	String x = request.getParameter("x");
+	String y = request.getParameter("y");
+	int r = Integer.parseInt(x) + Integer.parseInt(y);
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,8 +12,12 @@
 <title>Brad Big Company</title>
 </head>
 <body>
-Welcome, 
-<jsp:getProperty name="member" property="name" />
+<%= x %>
++
+<%= y %>
+=
+<%= r %>
+
 
 </body>
 </html>
