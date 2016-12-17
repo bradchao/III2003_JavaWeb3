@@ -8,7 +8,6 @@ import java.io.Serializable;
  * 2. public class
  * 3. 屬性成員一定不可以 public
  * 4. => getter, setter
- * 5. 有無傳參數的建構子(預設建構子)
  */
 public class Member implements Serializable {
 	private String id;
