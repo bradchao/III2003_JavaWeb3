@@ -18,14 +18,14 @@ Name3 : ${urname[2] }<br>
 <hr>
 <%
 	HashMap<String,String> data = new HashMap<>();
-	data.put("name", "Brad");
-	data.put("passwd", "123456");
+	data.put("my name", "Brad");
+	data.put("passwd.1", "123456");
 	data.put("gender", "male");
 	request.setAttribute("data", data);
 %>
-User: ${data.name }<br>
-Password: ${data.passwd }<br>
-Gender: ${data.gender }<br>
+User: ${data["my name"] }<br>
+Password: ${data["passwd.1"] }<br>
+Gender: ${data["gender"] }<br>
 
 </body>
 </html>
