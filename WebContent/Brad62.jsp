@@ -16,6 +16,9 @@ Welcome,
 <hr>
 Welcom, 
 ${member.name }
+<hr>
+Welcom, 
+${member["name"] }
 
 </body>
 </html>
