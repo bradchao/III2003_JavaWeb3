@@ -13,6 +13,9 @@
 <body>
 Welcome, 
 <jsp:getProperty name="member" property="name" />
+<hr>
+Welcom, 
+${member.name }
 
 </body>
 </html>
