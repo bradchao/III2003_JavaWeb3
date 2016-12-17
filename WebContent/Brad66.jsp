@@ -12,10 +12,15 @@
 	String method = ((HttpServletRequest)pageContext.getRequest()).getMethod();
 	String query =  ((HttpServletRequest)pageContext.getRequest()).getQueryString();
 	String ip =  ((HttpServletRequest)pageContext.getRequest()).getRemoteAddr();
+
 %>
 Method = <%= method %><br>
 Query = <%= query %><br>
 IP : <%= ip %><br>
+<hr>
+Method: <%=request.getMethod()%>
+<hr>
+Method: ${pageContext.request.method}
 
 
 </body>
