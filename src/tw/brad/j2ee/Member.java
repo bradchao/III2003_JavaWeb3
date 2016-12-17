@@ -14,8 +14,25 @@ public class Member implements Serializable {
 	private String id;
 	private String name;
 	
-	public void setId(String id){this.id = id;}
-	public void setName(String name){this.name = name;}
+	public Member(){
+		System.out.println("Member()");
+	}
+	
+	public void setId(String id){
+		this.id = id;
+		System.out.println("setId()");
+	}
+	public void setName(String name){
+		this.name = name;
+		System.out.println("setName()");
+	}
 	public String getId(){return id;}
-	public String getName(){return name;}
+	public String getName(){
+		System.out.println("getName()");
+		return m1() + name;
+	}
+	private String m1(){
+		return "OK";
+	}
+	
 }
