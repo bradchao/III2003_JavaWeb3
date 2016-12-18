@@ -29,7 +29,7 @@ public class Member implements Serializable {
 	public String getId(){return id;}
 	public String getName(){
 		System.out.println("getName()");
-		return m1() + name;
+		return name;
 	}
 	private String m1(){
 		return "OK";
