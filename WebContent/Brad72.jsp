@@ -24,7 +24,10 @@ Jacky
 </c:set>
 <c:out value="${member.name }" />
 <hr>
-
+<c:remove var="x" scope="request"/>
+Request: <c:out value="${requestScope.x }" default="no-value"/><br>
+<hr>
+${member }
 
 
 
