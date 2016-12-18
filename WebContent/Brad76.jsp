@@ -16,15 +16,28 @@
 	pageContext.setAttribute("start", request.getParameter("start"));
 	pageContext.setAttribute("end", request.getParameter("end"));
 	pageContext.setAttribute("index", request.getParameter("start"));
-	pageContext.setAttribute("step", 1);
+	pageContext.setAttribute("step", 2);
 	
 %>
 <table border='1'>
+<tr>
+	<th>index</th>
+	<th>Name</th>
+	<th>status.index</th>
+	<th>status.count</th>
+	<th>status.isFirst</th>
+	<th>status.isLast</th>
+</tr>
 <c:forEach items="${names }" var="name" 
-	begin="${start }" end="${end }" step="${step }">
+	begin="${start }" end="${end }" step="${step }"
+	varStatus="status">
 <tr>
 <td>${index }<c:set var="index" value="${index + step }" /></td>
 <td>${name }</td>
+<td>${status.index }</td>
+<td>${status.count }</td>
+<td>${status.first }</td>
+<td>${status.last }</td>
 </tr>
 </c:forEach>
 	
