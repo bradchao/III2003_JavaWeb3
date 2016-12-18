@@ -11,6 +11,7 @@
 	// Scope
 	// 1. page
 	pageContext.setAttribute("name", "page");
+	pageContext.setAttribute("x", "");
 	// 2. request
 	request.setAttribute("name", "request");
 	// 3. session
@@ -22,7 +23,7 @@ Page: ${pageScope.name }<br>
 Request: ${requestScope.name }<br>
 Session: ${sessionScope.name }<br>
 Application: ${applicationScope.name }<br>
-
+${x + 10}
 
 </body>
 </html>
