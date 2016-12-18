@@ -8,12 +8,13 @@
 <title>Brad Big Company</title>
 </head>
 <body>
+<c:set var="x" value="11" scope="page" />
 <%
-	pageContext.setAttribute("name", "<h1>Brad</h1>");
+	pageContext.setAttribute("x", "11");
 %>
-<c:out value="${name}" default="nobody" escapeXml="false"/><br>
-<%= pageContext.getAttribute("name") %><br>
-${name }
-
+<c:set var="x" value="12" scope="request" />
+<c:set var="x" value="13" scope="session" />
+<c:set var="x" value="14" scope="application" />
+<c:out value="${sessionScope.x }" />
 </body>
 </html>
