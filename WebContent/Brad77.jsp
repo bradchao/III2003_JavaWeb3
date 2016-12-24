@@ -10,10 +10,11 @@
 <body>
 <%
 	// csv => read line
-	String str = "1,brad,male,0912-123456,2000-01-02,台中市西屯區";
-	pageContext.setAttribute("str", str);
+	String line = "1,brad,male,0912-123456,2000-01-02,台中市西屯區";
+	pageContext.setAttribute("str", line);
 %>
-<c:forTokens items="${str }" delims="," var="field">
+<c:forTokens items="${str }" delims="," var="field" 
+	begin="2" end="5" step="1">
 ${field }<br>
 </c:forTokens>
 
