@@ -15,10 +15,12 @@ Header
 <hr>
 ${import2}
 <hr>
+<c:catch>
 <c:import url="Brad79.jsp">
 	<c:param name="x" value="10" />
 	<c:param name="y" value="3" />
 </c:import>
+</c:catch>
 <hr>
 <c:url value="http://www.iii.org.tw" var="iiiurl" />
 

@@ -10,7 +10,11 @@
 <body>
 I am Brad80
 <hr>
-<c:redirect url="Brad81.jsp" />
+<c:catch>
+<c:redirect url="Brad81.jsp" >
+	<c:param name="key" value="val" />
+</c:redirect>
+</c:catch>
 
 </body>
 </html>
