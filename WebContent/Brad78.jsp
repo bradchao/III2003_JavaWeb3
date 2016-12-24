@@ -19,6 +19,8 @@ ${import2}
 	<c:param name="x" value="10" />
 	<c:param name="y" value="3" />
 </c:import>
+<hr>
+<c:url value="http://www.iii.org.tw" var="iiiurl" />
 
 <hr>
 <jsp:include page="login.html" />
