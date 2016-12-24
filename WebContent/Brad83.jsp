@@ -8,6 +8,22 @@
 <title>Brad Big Company</title>
 </head>
 <body>
+<fmt:setLocale value="zh" />
+<fmt:bundle basename="mesg">
+	<fmt:message key="hello"/>, <fmt:message key="who"/>
+</fmt:bundle>
+<hr>
+<fmt:setLocale value="zh_TW" />
+<fmt:bundle basename="mesg">
+	<fmt:message key="hello"/>, <fmt:message key="who"/>
+</fmt:bundle>
+<hr>
+<fmt:setLocale value="en" />
+<fmt:bundle basename="mesg">
+	<fmt:message key="hello"/>, <fmt:message key="who"/>
+</fmt:bundle>
+
+
 
 </body>
 </html>
