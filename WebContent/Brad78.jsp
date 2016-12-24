@@ -8,19 +8,24 @@
 <title>Brad Big Company</title>
 </head>
 <body>
-<%
-	// csv => read line
-	String line = "1,brad,male,0912-123456,2000-01-02,台中市西屯區";
-	pageContext.setAttribute("str", line);
-%>
-<c:forTokens items="${str }" delims="," var="field" 
-	begin="2" end="5" step="1">
-${field }<br>
-</c:forTokens>
+Header
+<hr>
+<c:import url="import.txt" var="import2"/><br>
+<jsp:include page="import.txt" />
+<hr>
+${import2}
+<hr>
+<c:import url="Brad79.jsp">
+	<c:param name="x" value="10" />
+	<c:param name="y" value="3" />
+</c:import>
 
-
-
-
+<hr>
+<jsp:include page="login.html" />
+<hr>
+<c:import url="http://www.iii.org.tw" />
+<hr>
+Footer
 
 
 </body>
