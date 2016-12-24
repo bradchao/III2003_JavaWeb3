@@ -28,6 +28,9 @@
 	<th>status.isFirst</th>
 	<th>status.isLast</th>
 </tr>
+<%
+
+%>
 <c:forEach items="${names }" var="name" 
 	begin="${param.start }" end="${param.end }" step="${step }"
 	varStatus="status">
