@@ -9,13 +9,17 @@
 <title>Brad Big Company</title>
 </head>
 <body>
-<c:set var="num" value="1234567.89" />
+<c:set var="num" value="1234567.89"/>
 <fmt:setLocale value="zh"/>
-<fmt:formatNumber value="${num }"/><br>
+<fmt:formatNumber value="${num }" type="currency" currencyCode="INR"/><br>
 <fmt:setLocale value="fr"/>
-<fmt:formatNumber value="${num }"/><br>
+<fmt:formatNumber value="${num }" type="currency"/><br>
+<fmt:setLocale value="ja"/>
+<fmt:formatNumber value="${num }" type="currency" currencyCode="JPY"/><br>
+
 <fmt:setLocale value="de"/>
-<fmt:formatNumber value="${num }"/><br>
+<fmt:parseNumber value="56.789,321" var="price" />
+${price }
 
 
 </body>
