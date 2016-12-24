@@ -13,9 +13,9 @@
 	String[] names = {"Brad","Tony","Peter","Jacky","Mary","Kevin"};
 	pageContext.setAttribute("names", names);
 	
-	pageContext.setAttribute("start", request.getParameter("start"));
-	pageContext.setAttribute("end", request.getParameter("end"));
-	pageContext.setAttribute("index", request.getParameter("start"));
+//	pageContext.setAttribute("start", request.getParameter("start"));
+//	pageContext.setAttribute("end", request.getParameter("end"));
+//	pageContext.setAttribute("index", request.getParameter("start"));
 	pageContext.setAttribute("step", 2);
 	
 %>
@@ -29,7 +29,7 @@
 	<th>status.isLast</th>
 </tr>
 <c:forEach items="${names }" var="name" 
-	begin="${start }" end="${end }" step="${step }"
+	begin="${param.start }" end="${param.end }" step="${step }"
 	varStatus="status">
 <tr>
 <td>${index }<c:set var="index" value="${index + step }" /></td>
