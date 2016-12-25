@@ -6,20 +6,22 @@
 <sql:setDataSource driver="com.mysql.jdbc.Driver" 
 	url="jdbc:mysql://localhost/iii" user="root" password="root" 
 	/> 
-
-<sql:update var="n"
-	sql="delete from member where id > ?">
-	<sql:param value="30" />
-</sql:update>
-<sql:update var="n"
-	sql="update member set account=?,passwd=? where id = 24">
-	<sql:param value="brad" />
-	<sql:param value="123" />
-</sql:update>
+<sql:transaction isolation="serializable">
+	<sql:update var="n"
+		sql="delete from member where id > ?">
+		<sql:param value="30" />
+	</sql:update>
+	<sql:update var="n"
+		sql="update member set account=?,passwd=? where id = 24">
+		<sql:param value="brad" />
+		<sql:param value="123" />
+	</sql:update>
 
 <sql:query var="result">
 select * from member
 </sql:query>
+
+</sql:transaction>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
