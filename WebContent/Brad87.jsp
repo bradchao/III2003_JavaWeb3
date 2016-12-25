@@ -11,7 +11,7 @@
 	url="jdbc:mysql://localhost/iii" user="root" password="root" 
 	var="iii" scope="page"/> 
 
-<sql:query var="result1" dataSource="${iii }">
+<sql:query var="result1" dataSource="${iii }" startRow="10" maxRows="5">
 select id as mid, account,passwd from member
 </sql:query>
 <sql:query var="result2" dataSource="${labdb }">
