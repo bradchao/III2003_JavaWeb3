@@ -29,6 +29,10 @@ select * from LabTable
 MySQL: Total: ${result1.rowCount }
 <hr>
 MsSQL: Total: ${result2.rowCount }
+<hr>
+<c:forEach items="${result1.rows}" var="member">
+${member.id }:${member.account }:${member.passwd }<br>
+</c:forEach>
 
 </body>
 </html>
