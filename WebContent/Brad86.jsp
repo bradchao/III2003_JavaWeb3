@@ -6,7 +6,8 @@
 	try{
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		String connectionUrl = 
-				"jdbc:sqlserver://localhost:1433;" + "databaseName=LabDB;user=sa;password=sa;"; 
+				"jdbc:sqlserver://localhost:1433;" + 
+			"databaseName=LabDB;user=sa;password=sa;"; 
 		Connection conn = 
 				DriverManager.getConnection(connectionUrl);
 		Statement stmt = conn.createStatement();
