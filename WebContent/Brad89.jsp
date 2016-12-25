@@ -5,14 +5,19 @@
 
 <sql:setDataSource driver="com.mysql.jdbc.Driver" 
 	url="jdbc:mysql://localhost/iii" user="root" password="root" 
-	var="iii" scope="page"/> 
+	/> 
 
-<sql:update var="n" dataSource="${iii }"
+<sql:update var="n"
 	sql="delete from member where id > ?">
 	<sql:param value="30" />
 </sql:update>
+<sql:update var="n"
+	sql="update member set account=?,passwd=? where id = 24">
+	<sql:param value="brad" />
+	<sql:param value="123" />
+</sql:update>
 
-<sql:query var="result" dataSource="${iii }">
+<sql:query var="result">
 select * from member
 </sql:query>
     
