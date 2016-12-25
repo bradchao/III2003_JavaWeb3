@@ -8,8 +8,8 @@
 		Connection conn = 
 				DriverManager.getConnection(
 						"jdbc:mysql://localhost/iii","root","root");
-		
-		System.out.println("OK");
+		Statement stmt = conn.createStatement();
+		stmt.execute("insert into member (account,passwd,realname) values ('aaaa','bbbb','cccc')");
 		
 	}catch(Exception e){
 		System.out.println("E:" + e.toString());
