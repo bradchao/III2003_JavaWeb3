@@ -179,4 +179,9 @@
     <param-name>imgs-path</param-name>
     <param-value>D:\Source\Brad\WebContent\imgs</param-value>
   </context-param>
+  <context-param>
+    <description>Upload Folder</description>
+    <param-name>upload-path</param-name>
+    <param-value>D:\Source\Brad\WebContent\upload</param-value>
+  </context-param>
 </web-app>
