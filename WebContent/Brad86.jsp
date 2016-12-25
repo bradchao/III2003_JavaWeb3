@@ -4,13 +4,12 @@
 <%
 	// JSP
 	try{
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		String connectionUrl = 
+				"jdbc:sqlserver://localhost:1433;" + "databaseName=LabDB;user=sa;password=sa;"; 
 		Connection conn = 
-				DriverManager.getConnection(
-						"jdbc:mysql://localhost/iii","root","root");
-		Statement stmt = conn.createStatement();
-		stmt.execute("insert into member (account,passwd,realname) values ('aaaa','bbbb','cccc')");
-		
+				DriverManager.getConnection(connectionUrl);
+		System.out.println("OK");
 	}catch(Exception e){
 		System.out.println("E:" + e.toString());
 	}
