@@ -31,7 +31,7 @@ MySQL: Total: ${result1.rowCount }
 MsSQL: Total: ${result2.rowCount }
 <hr>
 <c:forEach items="${result1.rows}" var="member">
-${member.mid }:${member.account }:${member.passwd }<br>
+${member.id }:${member.account }:${member.passwd }<br>
 </c:forEach>
 <hr>
 <c:forEach items="${result1.rowsByIndex}" var="data">

@@ -7,13 +7,17 @@
 	url="jdbc:mysql://localhost/iii" user="root" password="root" 
 	var="iii" scope="page"/> 
 
-<sql:update dataSource="${iii }" var="n"
-sql="insert into member (account,passwd,realname) values (?,?,?)"
->
-	<sql:param value="${param.account }" />
-	<sql:param value="${param.passwd }" />
-	<sql:param value="Hello, World" />
-</sql:update>
+<sql:transaction dataSource="${iii }">
+	<sql:update var="n"
+		sql="insert into member (account,passwd,realname) values (?,?,?)">
+		<sql:param value="${param.account }" />
+		<sql:param value="${param.passwd }" />
+		<sql:param value="Hello, World" />
+	</sql:update>
+	<sql:query var="lastid">
+		select last_insert_id() as newid
+	</sql:query>
+</sql:transaction>
 
 <sql:query var="result" dataSource="${iii }">
 select * from member
@@ -26,7 +30,9 @@ select * from member
 <title>Brad Big Company</title>
 </head>
 <body>
-${n }<br>
+<c:if test="${n >= 1 }">
+Last ID: ${lastid.rows[0].newid }
+</c:if>
 MySQL: Total: ${result.rowCount }
 <hr>
 <c:forEach items="${result.rows}" var="member">
