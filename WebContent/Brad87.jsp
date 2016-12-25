@@ -4,9 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 
 <sql:setDataSource 
-	dataSource="jdbc:mysql/localhost/iii,com.mysql.jdbc.Driver,root,root" />
+	dataSource="jdbc:mysql://localhost/iii,com.mysql.jdbc.Driver,root,root" />
 <sql:setDataSource driver="com.mysql.jdbc.Driver" 
-	url="jdbc:mysql/localhost/iii" user="root" password="root" 
+	url="jdbc:mysql://localhost/iii" user="root" password="root" 
 	var="iii" scope="session"/> 
 
 <sql:query var="result">
@@ -21,7 +21,7 @@ select * from member
 </head>
 <body>
 
-// ${result } ==> Object
+Total: ${result.rowCount }
 
 </body>
 </html>
