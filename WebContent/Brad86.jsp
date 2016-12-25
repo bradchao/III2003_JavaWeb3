@@ -9,6 +9,10 @@
 				"jdbc:sqlserver://localhost:1433;" + "databaseName=LabDB;user=sa;password=sa;"; 
 		Connection conn = 
 				DriverManager.getConnection(connectionUrl);
+		Statement stmt = conn.createStatement();
+		stmt.execute("insert into LabTable (id,data) values (5,'World')");
+		
+		
 		System.out.println("OK");
 	}catch(Exception e){
 		System.out.println("E:" + e.toString());
