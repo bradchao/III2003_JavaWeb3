@@ -1,11 +1,16 @@
 <%@tag description="9 x 9" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <table border='1' width='100%'>
+<c:forEach begin="1" end="4" var="r">
 	<tr>
 		<c:forEach begin="2" end="5" var="y">
 			<td>
-			${y } x 1 = ${y }<br>
+				<c:forEach begin="1" end="9" var="x">
+					${y+(r-1)*4 } x ${x} = ${(y+(r-1)*4) * x }<br>
+				</c:forEach>
 			</td>
 		</c:forEach>
 	</tr>
+
+</c:forEach>
 </table>
