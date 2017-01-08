@@ -8,8 +8,12 @@
 <title>Brad Big Company</title>
 </head>
 <body>
-<brad:MyHeader pagename="會員專區" func="回首頁" url="http://tw.yahoo.com"/>
+<brad:MyHeader pagename="會員專區" 
+	func="回首頁" url="http://tw.yahoo.com" year="2017">
+	<div>Member Page</div>
+</brad:MyHeader>
 <hr />
+
 <brad:Hello />
 <hr />
 <brad:B99 />
