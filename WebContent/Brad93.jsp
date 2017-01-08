@@ -12,6 +12,12 @@
 <mytag:if test="${param.name == 'brad' }">
 doTag(): Hello, Brad
 </mytag:if>
+<hr />
+
+<mytag:loop var="name" items="${names }">
+
+</mytag:loop>
+
 
 </body>
 </html>
