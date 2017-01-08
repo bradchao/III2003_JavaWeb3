@@ -3,8 +3,12 @@ package tw.brad.mytags;
 import java.io.IOException;
 import java.util.Collection;
 
+import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.JspFragment;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+import org.apache.jasper.compiler.Node.JspBody;
 
 public class MyLoop extends SimpleTagSupport {
 	private String var;
@@ -16,5 +20,15 @@ public class MyLoop extends SimpleTagSupport {
 	@Override
 	public void doTag() throws JspException, IOException {
 		super.doTag();
+		JspContext jsp = getJspContext();
+		JspFragment body = getJspBody();
+		
+		for (Object obj: items){
+			jsp.setAttribute(var, obj);
+			body.invoke(null);
+			jsp.removeAttribute(var);
+		}
+		
+		
 	}
 }
