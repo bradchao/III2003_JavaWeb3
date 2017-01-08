@@ -3,6 +3,7 @@ package tw.brad.mytags;
 import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.JspFragment;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class MyIf extends SimpleTagSupport {
@@ -16,7 +17,10 @@ public class MyIf extends SimpleTagSupport {
 	@Override
 	public void doTag() throws JspException, IOException {
 		super.doTag();
-		
+		if (test){
+			JspFragment jf = getJspBody();
+			jf.invoke(null);
+		}
 	}
 
 }
