@@ -32,7 +32,22 @@
         <attribute>
         	<name>test</name>
         	<required>true</required>
-        	<type>boolean</type>
+        	<rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>Brad Loop Tag</description>
+        <name>loop</name>
+        <tag-class>tw.brad.mytags.MyLoop</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+        	<name>var</name>
+        	<required>true</required>
+        	<rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+        	<name>items</name>
+        	<required>true</required>
         	<rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
