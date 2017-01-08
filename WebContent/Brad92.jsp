@@ -8,7 +8,7 @@
 <title>Brad Big Company</title>
 </head>
 <body>
-<h1>Brad Big Company</h1>
+<brad:MyHeader pagename="會員專區" func="回首頁" url="http://tw.yahoo.com"/>
 <hr />
 <brad:Hello />
 <hr />
