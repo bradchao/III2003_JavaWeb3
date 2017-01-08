@@ -33,6 +33,7 @@
         	<name>test</name>
         	<required>true</required>
         	<type>boolean</type>
+        	<rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
 </taglib>
