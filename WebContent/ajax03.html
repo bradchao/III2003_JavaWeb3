@@ -7,10 +7,15 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 		function(){
 			$("#mybtn").click(
 				function(){
-					$("#here").load("Brad96.jsp",
+					$("#here").load("Brad97.jsp",
 						function(responseText, status, xhttp){
-							$('#span').html(responseText);
-							$('#span2').html(status);
+							if (status=='success'){
+								alert('OK');
+								$('#span').html(responseText);
+								$('#span2').html(status);
+							}else{
+								alert(status);								
+							}
 						}
 					);
 				}
