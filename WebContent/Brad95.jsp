@@ -8,7 +8,7 @@
 	var="iii" scope="page"/>
 
 <sql:query var="result" dataSource="${iii }">
-select * from mydog where id = 1
+select * from mydog where id = ${param.id}
 </sql:query>
 
 <c:forEach items="${result.rows}" var="pos">
