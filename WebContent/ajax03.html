@@ -46,6 +46,17 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 						);
 					}
 				);
+			$('#myajax').click(
+					function(){
+						$.ajax({
+							url: "Brad96.jsp?name=brad&year=2016",
+							success: function(result){
+								$('#here4').html(result);
+							}
+						});
+					}
+			);
+			
 			
 		}
 	);
@@ -64,5 +75,8 @@ status = <span id='span2'></span>
 <hr />
 <input type='button' value='post' id='mypost' />
 <div id='here3'></div>
+<hr />
+<input type='button' value='ajax' id='myajax' />
+<div id='here4'></div>
 
 
