@@ -7,5 +7,5 @@
 	url="jdbc:mysql://localhost/iii" user="root" password="root" 
 	var="iii" scope="page"/>
 
-I am Brad96
+Hello, ${param.year }, ${param.name }
  

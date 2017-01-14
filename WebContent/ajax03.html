@@ -23,7 +23,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 		
 			$('#myget').click(
 				function(){
-					$.get('Brad96.jsp',
+					$.get('Brad96.jsp?name=brad&year=2016',
 						function(responseText, status){
 							alert(status);
 							$('#here2').html(responseText);
@@ -31,6 +31,21 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 					);
 				}
 			);
+			
+			$('#mypost').click(
+					function(){
+						$.post('Brad96.jsp',
+							{
+								name: "Brad",
+								year: 2017
+							},
+							function(responseText, status){
+								alert(status);
+								$('#here3').html(responseText);
+							}
+						);
+					}
+				);
 			
 		}
 	);
@@ -46,5 +61,8 @@ status = <span id='span2'></span>
 <hr />
 <input type='button' value='get' id='myget' />
 <div id='here2'></div>
+<hr />
+<input type='button' value='post' id='mypost' />
+<div id='here3'></div>
 
 
