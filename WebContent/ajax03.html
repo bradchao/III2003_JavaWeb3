@@ -7,7 +7,12 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 		function(){
 			$("#mybtn").click(
 				function(){
-					alert('OK');
+					$("#here").load("Brad96.jsp",
+						function(responseText, status, xhttp){
+							$('#span').html(responseText);
+							$('#span2').html(status);
+						}
+					);
 				}
 			);		
 		
@@ -20,4 +25,6 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 <hr />
 Hello, World
 <div id='here'></div>
+responseText = <span id='span'></span><br />
+status = <span id='span2'></span>
 
