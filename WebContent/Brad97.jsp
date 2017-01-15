@@ -3,6 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="brad" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://www.iii.org.tw/brad/tags" prefix="mytag" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +11,10 @@
 <title>Brad Big Company</title>
 </head>
 <body>
+${mytag:sayHello('Brad') }
+<hr />
+${mytag:sayHelloV2('Brad','AAA','BBB','III') }
+<hr />
 <c:set var="account" value="bradchao" />
 <c:if test="${fn:contains(account, 'brad') }">
 ${fn:length(account) }
