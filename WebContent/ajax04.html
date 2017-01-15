@@ -4,7 +4,18 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 
 <script>
 	function test1(){
-		
+		$.ajax({
+			url: "Brad99.jsp",
+			type: 'get',
+			success: doSuccess,
+			error: doError
+		});
+	}
+	function doSuccess(mesg){
+		alert('OK:' + mesg);
+	}
+	function doError(mesg){
+		alert('XX:' + mesg);
 	}
 </script>
 <input type='button' value='ajax' onclick='test1()' />
