@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script 
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 </script>
@@ -13,8 +14,20 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 			error: doError
 		});
 	}
-	function doSuccess(mesg){
-		$('#success').html(mesg);
+	function doSuccess(json){
+		$('#table').empty();
+		var jsonObj = $.parseJSON(json);
+		$(jsonObj).each(
+			function(i, val){
+				$('#table').append(
+					'<tr>' +
+					'<td>' + val.Name + '</td>' +
+					'<td>' + val.Address + '</td>' +
+					'<tr>'
+				);
+				//console.log(i + ":" +val.Name + ":" + val.Address);
+			}
+		);
 	}
 	function doError(mesg){
 		$('#error').html(mesg);
@@ -22,6 +35,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
 </script>
 <input type='button' value='ajax' onclick='test1()' /><br />
 Success: <span id='success'></span><br />
-Error: <span id='error'></span>
+Error: <span id='error'></span><hr />
+<table border='1' width='100%' id='table' />
 
 
